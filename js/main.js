@@ -122,5 +122,17 @@ console.log(getTargetMonth());
 budgetDay = accumulatedMonth / 30;
 console.log(budgetDay);
 
+//lesson04-02
 
-
+const myFunc = function(a, callback) {
+    if (typeof a === 'string') {
+        callback(a);
+    } else {
+        console.log('Это не строка!');
+    }
+};
+myFunc('  ghbистфиырcncbmndbksdbfakjbfakjbfakjbfkawjkwjudkawubfhkbfhk', function(a) {    
+    let b = a.trim().slice(0, 30);
+    a = b + '...';
+    console.log(a);        
+});
