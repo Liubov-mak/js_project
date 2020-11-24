@@ -81,16 +81,38 @@ console.log(mission);
 
 budgetDay = budgetMonth / 30;
 budgetDay = parseFloat(Math.floor(budgetDay));
-console.log(budgetDay); 
+console.log(budgetDay);  
 
 budgetDay = 800;
 
 if (budgetDay >= 1200) {
     console.log('У вас высокий уровень дохода');
-} else if (600 < budgetDay < 1200) {
+} else if (budgetDay > 600 && budgetDay < 1200) {
     console.log('У вас средний уровень дохода');
-} else if (0 < budgetDay < 600) {
+} else if (budgetDay > 0 && budgetDay < 600) {
     console.log('К сожалению у вас уровень дохода ниже среднего');
 } else {
     console.log('Что то пошло не так');
 }
+
+
+/* let item = 300;
+
+if (item >= 500) {
+    console.log('Супер');
+} else if (item > 300 && item < 500) {
+    console.log('Среднячек');
+} else if (item >= 0 && item <= 300) {
+    console.log('Лузер');
+} else {
+    console.log('Упс');
+} */
+
+//lesson 03-02
+let namePerson = 'Максим';
+let userName = (namePerson === 'Артем') ? 'Директор' : 
+    (namePerson === 'Максим') ? 'Преподаватель' :
+    'студент';
+    console.log(userName);
+
+
