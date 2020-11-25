@@ -18,7 +18,7 @@ budgetDay = money / 30;
 
 //
 let start = function() {
-    money = prompt('Ваш месячный доход?');
+    /* money = prompt('Ваш месячный доход?'); */
 
     do {
         money = prompt('Ваш месячный доход?');
@@ -101,8 +101,7 @@ let getExpensesMonth = function() {
         sum += +prompt('Во сколько это обойдется?');
     }
     console.log(sum);
-    return sum;
-    /* return amount1 + amount2; */
+    return sum;    
 };
 
 let expensesAmount = getExpensesMonth();
