@@ -18,10 +18,10 @@ budgetDay = money / 30;
 
 //
 let start = function() {
-    money = +prompt('Ваш месячный доход?');
+    money = prompt('Ваш месячный доход?');
 
     while (isNaN(parseFloat(money))) {
-        money = +prompt('Ваш месячный доход?');
+        money = prompt('Ваш месячный доход?');
     }
 };
 
