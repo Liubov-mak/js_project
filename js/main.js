@@ -1,8 +1,8 @@
 'use strict';
 
-/* let isNumber = function(n) {
+let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
-}; */
+};
 
 let money = 500; 
 let income = /* 'фриланс' */ 800;
@@ -20,7 +20,7 @@ budgetDay = money / 30;
 let start = function() {
     money = prompt('Ваш месячный доход?');
 
-    while (isNaN(parseFloat(money))) {
+    while (!isNumber(money)) {
         money = prompt('Ваш месячный доход?');
     }
 };
@@ -104,7 +104,7 @@ console.log('Расходы за месяц: ' + expensesAmount);
 
 //
 let getAccumulatedMonth = function() {
-    return income - expensesAmount;
+    return money - expensesAmount;
 };
 let accumulatedMonth = getAccumulatedMonth();
 console.log(accumulatedMonth);
