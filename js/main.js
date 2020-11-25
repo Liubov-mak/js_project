@@ -88,8 +88,14 @@ let getExpensesMonth = function() {
     for (let i = 0; i < 2; i++) {
         if (i === 0) {
             expenses1 = prompt('Введите обязательную статью расходов?', 'Коммуналка');
+            while (isNumber(expenses1)) {
+                expenses1 = prompt('Введите обязательную статью расходов?', 'Коммуналка');
+            }
         } else if (i === 1) {
             expenses2 = prompt('Введите обязательную статью расходов?', 'Школа');
+            while (isNumber(expenses2)) {
+                expenses2 = prompt('Введите обязательную статью расходов?', 'Школа');
+            }    
         }
 
         sum += +prompt('Во сколько это обойдется?');
