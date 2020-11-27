@@ -5,11 +5,11 @@ let isNumber = function(n) {
 };
 
 //-------------------------------
-let money = 12500;
-let expenses1;
+let money;
+/* let expenses1;
 let expenses2;
 let amount1;
-let amount2;
+let amount2; */
 
 
 //-------------------------------
@@ -52,13 +52,18 @@ let appData = {
                 newSum = +prompt('Во сколько это обойдется?');
             }   
             
-            sum += +newSum; 
+            sum += +newSum;            
+
+            appData.expenses = {i, newSum};
+            console.log(appData.expenses);
         }
         console.log(sum);
-        return sum;           
+        return sum; 
+        
+        
     },
     getAccumulatedMonth: function() {
-        return money - appData.expensesMonth;
+        return money - appData.expensesMonth;        
     },
     getTargetMonth: function() {
         return appData.mission / appData.accumulatedMonth;       
@@ -75,17 +80,18 @@ let appData = {
         }
     },    
 };
+
 appData.asking();
 
 //-------------------------------
 
 
-if (amount1 === null) {
+/* if (amount1 === null) {
     amount1 = 0;
 }
 if (amount2 === null) {
     amount2 = 0;
-}
+} */
 
 /* let budgetMonth;
 budgetMonth = appData.budgetDay * 30 + amount1 + amount2;
@@ -128,3 +134,6 @@ console.log(appData.getTargetMonth());
 //-------------------------------
 appData.budgetDay = appData.accumulatedMonth / 30;
 console.log(Math.ceil(appData.budgetDay));
+
+//-------------------------------
+console.log(appData);
