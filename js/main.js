@@ -5,21 +5,8 @@ let isNumber = function(n) {
 };
 
 let money = 500; 
-let income = /* 'фриланс' */ 800;
-let addExpenses = prompt('Перечислите возможные расходы через запятую?');
-console.log(addExpenses.toLowerCase().split(','));
-let deposit = confirm('Есть ли у вас депозит в банке?');
-let mission = 8758;
-/* console.log(`Цель заработать ${mission} рублей/долларов/гривен/юани`);  *///!!!!!!!!!!!!!!!!!!!!!!!!!!
-let period = 6;
-/* console.log('Период равен ' + period + ' месяцев'); */
-let budgetDay;
-budgetDay = money / 30;
-
-//
+//-------------------------------
 let start = function() {
-    /* money = prompt('Ваш месячный доход?'); */
-
     do {
         money = prompt('Ваш месячный доход?');
     } 
@@ -28,14 +15,23 @@ let start = function() {
 
 start();
 
-//
-const showTypeOf = function(data) {
-    console.log(data, typeof(data));
+//-------------------------------
+let appData = {
+    income: {},
+    addIncome: [],
+    expenses: {},
+    addExpenses: [],
+    deposit: false,
+    mission: 5000,
+    period: 3,
+    asking: function() {
+        let addExpenses = prompt('Перечислите возможные расходы через запятую?');
+            appData.addExpenses = addExpenses.toLowerCase().split(',');
+            appData.deposit = confirm('Есть ли у вас депозит в банке?');
+    }
 };
-showTypeOf(money);
-showTypeOf(income);
-showTypeOf(deposit);
 
+//-------------------------------
 let expenses1;
 let expenses2;
 let amount1;
@@ -60,28 +56,7 @@ budgetDay = budgetMonth / 30;
 budgetDay = parseFloat(Math.floor(budgetDay));
 console.log(budgetDay); */
 
-/* let getStatusIncome = function() {
-    if (budgetDay >= 1200) {
-        return('У вас высокий уровень дохода');
-    } else if (budgetDay > 600 && budgetDay < 1200) {
-        return('У вас средний уровень дохода');
-    } else if (budgetDay > 0 && budgetDay < 600) {
-        return('К сожалению у вас уровень дохода ниже среднего');
-    } else {
-        return('Что то пошло не так');
-    }
-};
-console.log(getStatusIncome()); */
-
-//lesson 03-02
-/* let namePerson = 'Максим';
-let userName = (namePerson === 'Артем') ? 'Директор' : 
-    (namePerson === 'Максим') ? 'Преподаватель' :
-    'студент';
-    console.log(userName); */
-
-//lesson 04-01 - 05-видео
-
+//-------------------------------
 let getExpensesMonth = function() {
     let sum = 0;
 
@@ -104,40 +79,45 @@ let getExpensesMonth = function() {
     return sum;    
 };
 
-let expensesAmount = getExpensesMonth();
-console.log('Расходы за месяц: ' + expensesAmount);
+/* do {
+    question = prompt('Во сколько это обойдется?');
+    }
+while (sum += +question); */
 
+let expensesMonth = getExpensesMonth();
+console.log('Расходы за месяц: ' + expensesMonth);
 
-//
+//-------------------------------
 let getAccumulatedMonth = function() {
-    return money - expensesAmount;
+    return money - expensesMonth;
 };
 let accumulatedMonth = getAccumulatedMonth();
 console.log(accumulatedMonth);
 
-//
+//-------------------------------
 let getTargetMonth = function() {
-    return mission / accumulatedMonth;
+    return appData.mission / accumulatedMonth; // appData потому что переменная обьявлекна в обьекте appData
 };
-console.log('Цель достигну за: ' + Math.ceil(getTargetMonth()) + ' месяцев');
+if (getTargetMonth() > 0) {
+    console.log('Цель достигну за: ' + Math.ceil(getTargetMonth()) + ' месяцев');
+} else {
+    console.log('Цель не будет достигнута');
+}
 
-//
-budgetDay = accumulatedMonth / 30;
-console.log(Math.ceil(budgetDay));
+//-------------------------------
+let budgetDay = accumulatedMonth / 30;
+console.log(Math.ceil(appData.budgetDay));
 
-//lesson04-02
-
-/* const myFunc = function(a, callback) {
-    if (typeof a === 'string') {
-        callback(a);
+//-------------------------------
+let getStatusIncome = function() {
+    if (budgetDay >= 1200) {
+        return('У вас высокий уровень дохода');
+    } else if (budgetDay > 600 && budgetDay < 1200) {
+        return('У вас средний уровень дохода');
+    } else if (budgetDay > 0 && budgetDay < 600) {
+        return('К сожалению у вас уровень дохода ниже среднего');
     } else {
-        console.log('Это не строка!');
+        return('Что то пошло не так');
     }
 };
-myFunc('  ghbистфиырcncbmndbksdbfakjbfakjbfakjbfkawjkwjudkawubfhkbfhk', function(a) {    
-    let b = a.trim().slice(0, 30);
-    a = b + '...';
-    console.log(a);        
-}); */
-
-//lesson05-01  - нифига не получился!
+console.log(getStatusIncome());
