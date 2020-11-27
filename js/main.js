@@ -62,7 +62,7 @@ let appData = {
         
         
     },
-    getAccumulatedMonth: function() {
+    getBudget: function() {
         return money - appData.expensesMonth;         
     },
     getTargetMonth: function() {
@@ -118,7 +118,7 @@ console.log('Расходы за месяц: ' + appData.expensesMonth);
 
 //-------------------------------
 
-appData.accumulatedMonth = appData.getAccumulatedMonth(); // appData потому что переменная обьявлекна в обьекте appData
+appData.accumulatedMonth = appData.getBudget(); // appData потому что переменная обьявлекна в обьекте appData
 /* console.log(appData.accumulatedMonth); */
 
 //-------------------------------
@@ -143,4 +143,10 @@ for (let key in appData) {
     console.log("Наша программа включает в себя данные: " + key + " Значение: " + appData[key]);
 }
 console.log(Object.keys(appData));
+
+/* let getExpensesMonth = function() {
+    for (let key in appData.expenses) {
+        appData.expensesMonth = appData.expenses[key]
+    }
+}; */
 
