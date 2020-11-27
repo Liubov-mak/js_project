@@ -40,6 +40,7 @@ let appData = {
         let addExpenses = prompt('Перечислите возможные расходы через запятую?');
             appData.addExpenses = addExpenses.toLowerCase().split(',');
             appData.deposit = confirm('Есть ли у вас депозит в банке?');
+            /* appData.expenses = appData.getExpensesMonth(); */
     },
     getExpensesMonth: function() {
         let sum = 0, newSum;
