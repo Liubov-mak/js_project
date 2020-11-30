@@ -53,7 +53,7 @@ let appData = {
             while (isNumber(addExpenses) || addExpenses === '' || addExpenses === null || addExpenses.trim() === '') {
                 addExpenses = prompt('Перечислите возможные расходы через запятую?');
             }            
-            appData.addExpenses = addExpenses.firstLetterCaps();            
+            appData.addExpenses = addExpenses.firstLetterCaps();          
             appData.deposit = confirm('Есть ли у вас депозит в банке?');
             for (let i = 0; i < 2; i++) {
                 let itemExpenses = prompt('Введите обязательную статью расходов?');
