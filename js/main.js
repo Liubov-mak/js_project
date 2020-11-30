@@ -126,6 +126,7 @@ if (appData.getTargetMonth() > 0) {
 //-------------------------------
 console.log(appData.getStatusIncome());
 console.log(appData.addExpenses);
+console.log(typeof appData.addExpenses);
 
 //-------------------------------
 /* for (let key in appData) {
