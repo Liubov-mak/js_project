@@ -46,7 +46,7 @@ let appData = {
                 let itemExpenses = prompt('Введите обязательную статью расходов?', 'школа');            
                 let cashExpenses;
                 do {
-                    cashExpenses = prompt('Во сколько это обойдется?', 2000);
+                    cashExpenses = prompt('Во сколько это обойдется?');
                 } 
                 while (isNaN(cashExpenses) || cashExpenses === '' || cashExpenses === null);
 
@@ -79,8 +79,7 @@ let appData = {
     getInfoDeposit: function() {
         if (appData.deposit) {
             appData.percentDeposit = prompt('Какой годовой процент?', '10');
-            appData.moneyDeposit = prompt('Какая сумма заложена?', 1000);
-            /* appData.deposit[appData.percentDeposit] = appData.moneyDeposit; */        
+            appData.moneyDeposit = prompt('Какая сумма заложена?', 1000);                   
         }        
     },  
     calcSavedMoney: function() {
@@ -91,11 +90,9 @@ let appData = {
 appData.asking();
 appData.getExpensesMonth();
 appData.getBudget();
-appData.getInfoDeposit();
 
 //-------------------------------
 console.log('Расходы за месяц: ' + appData.expensesMonth);
-console.log(appData.calcSavedMoney(), appData.percentDeposit, appData.moneyDeposit);
 
 //-------------------------------
 if (appData.getTargetMonth() > 0) {
