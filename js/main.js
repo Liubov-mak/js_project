@@ -1,7 +1,9 @@
 'use strict';
 
-const controlStart = document.getElementById('start');
+const controlStart = document.getElementById('start'); // кнопка старта
 console.log(controlStart);
+const controlCancel = document.getElementById('cancel'); // кнопка отмены
+console.log(controlCancel);
 const btnIncomeAdd = document.querySelector('.income_add');
 console.log(btnIncomeAdd);
 const btnExpensesAdd = document.querySelector('.expenses_add');
@@ -10,6 +12,18 @@ const depositCheckmark = document.querySelector('.deposit-checkmark');
 console.log(depositCheckmark);
 const additionalIncomeItem = document.querySelectorAll('.additional_income> .additional_income-item');
 console.log(additionalIncomeItem);
+
+const salaryAmount = document.querySelector('.salary-amount'); //Месячный доход
+console.log(salaryAmount);
+const expensesTitle = document.querySelector('.expenses-title'); //Обязательные расходы
+console.log(expensesTitle);
+const expensesAmount = document.querySelector('.expenses-amount'); //Обязательные расходы - сумма
+console.log(expensesAmount);
+const additionalExpensesItem = document.querySelector('.additional_expenses-item'); // Возможные расходы
+console.log(additionalExpensesItem);
+const targetAmount = document.querySelector('.target-amount'); //Сумма депозита
+console.log(targetAmount);
+
 
 /* document.body.style.background = 'red'; 
 setTimeout(() => document.body.style.background = '', 25000);  */ // сделать фон красным на 25 секунд
