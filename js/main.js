@@ -1,5 +1,20 @@
 'use strict';
 
+const controlStart = document.getElementById('start');
+console.log(controlStart);
+const btnIncomeAdd = document.querySelector('.income_add');
+console.log(btnIncomeAdd);
+const btnExpensesAdd = document.querySelector('.expenses_add');
+console.log(btnExpensesAdd);
+const depositCheckmark = document.querySelector('.deposit-checkmark');
+console.log(depositCheckmark);
+const additionalIncomeItem = document.querySelectorAll('.additional_income> .additional_income-item');
+console.log(additionalIncomeItem);
+
+document.body.style.background = 'red'; // сделать фон красным
+setTimeout(() => document.body.style.background = '', 25000);
+
+
 let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
