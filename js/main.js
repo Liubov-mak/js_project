@@ -32,17 +32,17 @@ const periodSelect = document.querySelector('.period-select'); //выбор пе
 console.log(periodSelect);
 const budgetMonthValue = document.querySelector('.budget_month-value');
 console.log(budgetMonthValue);
-const budgetDayValue = document.getElementsByClassName('budget_day-value');
+const budgetDayValue = document.getElementsByClassName('budget_day-value')[0];
 console.log(budgetDayValue);
-const expensesMonthValue = document.getElementsByClassName('expenses_month-value');
+const expensesMonthValue = document.getElementsByClassName('expenses_month-value')[0];
 console.log(expensesMonthValue);
-const additionalIncomeValue = document.getElementsByClassName('additional_income-value');
+const additionalIncomeValue = document.getElementsByClassName('additional_income-value')[0];
 console.log(additionalIncomeValue);
-const additionalExpensesValue = document.getElementsByClassName('additional_expenses-value');
+const additionalExpensesValue = document.getElementsByClassName('additional_expenses-value')[0];
 console.log(additionalExpensesValue);
-const incomePeriodValue = document.getElementsByClassName('income_period-value');
+const incomePeriodValue = document.getElementsByClassName('income_period-value')[0];
 console.log(incomePeriodValue);
-const targetMonthValue = document.getElementsByClassName('target_month-value');
+const targetMonthValue = document.getElementsByClassName('target_month-value')[0];
 console.log(targetMonthValue);
 
 let isNumber = function(n) {
