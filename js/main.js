@@ -13,9 +13,14 @@ console.log(depositCheckmark);
 const additionalIncomeItem = document.querySelectorAll('.additional_income> .additional_income-item');
 console.log(additionalIncomeItem);
 
+const incomeTitle = document.querySelector('.income-title'); //Дополнительный доход
+console.log(incomeTitle);
+const incomeAmount = document.querySelector('.income-amount'); //Дополнительный доход - сумма
+console.log(incomeAmount);
+
 const salaryAmount = document.querySelector('.salary-amount'); //Месячный доход
 console.log(salaryAmount);
-const expensesTitle = document.querySelector('.expenses-title'); //Обязательные расходы
+const expensesTitle = document.querySelectorAll('input > .expenses-title'); //Обязательные расходы !!!!!!!!!!!
 console.log(expensesTitle);
 const expensesAmount = document.querySelector('.expenses-amount'); //Обязательные расходы - сумма
 console.log(expensesAmount);
