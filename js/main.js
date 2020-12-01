@@ -10,17 +10,17 @@ const btnExpensesAdd = document.querySelector('.expenses_add');
 console.log(btnExpensesAdd);
 const depositCheckmark = document.querySelector('.deposit-checkmark');
 console.log(depositCheckmark);
-const additionalIncomeItem = document.querySelectorAll('.additional_income> .additional_income-item');
-console.log(additionalIncomeItem);
-
-const incomeTitle = document.querySelector('.income-title'); //Дополнительный доход
+const prevAdditionalIncomeItem = document.querySelectorAll('.additional_income> .additional_income-item')[0];
+console.log(prevAdditionalIncomeItem);
+const nextAdditionalIncomeItem = document.querySelectorAll('.additional_income> .additional_income-item')[1];
+console.log(nextAdditionalIncomeItem);
+const incomeTitle = document.querySelector('.income-items> .income-title'); //Дополнительный доход
 console.log(incomeTitle);
 const incomeAmount = document.querySelector('.income-amount'); //Дополнительный доход - сумма
 console.log(incomeAmount);
-
 const salaryAmount = document.querySelector('.salary-amount'); //Месячный доход
 console.log(salaryAmount);
-const expensesTitle = document.querySelectorAll('input > .expenses-title'); //Обязательные расходы !!!!!!!!!!!
+const expensesTitle = document.querySelectorAll('.expenses-items> .expenses-title')[0]; //Обязательные расходы 
 console.log(expensesTitle);
 const expensesAmount = document.querySelector('.expenses-amount'); //Обязательные расходы - сумма
 console.log(expensesAmount);
@@ -28,11 +28,22 @@ const additionalExpensesItem = document.querySelector('.additional_expenses-item
 console.log(additionalExpensesItem);
 const targetAmount = document.querySelector('.target-amount'); //Сумма депозита
 console.log(targetAmount);
-
-
-/* document.body.style.background = 'red'; 
-setTimeout(() => document.body.style.background = '', 25000);  */ // сделать фон красным на 25 секунд
-
+const periodSelect = document.querySelector('.period-select'); //выбор периода
+console.log(periodSelect);
+const budgetMonthValue = document.querySelector('.budget_month-value');
+console.log(budgetMonthValue);
+const budgetDayValue = document.getElementsByClassName('budget_day-value');
+console.log(budgetDayValue);
+const expensesMonthValue = document.getElementsByClassName('expenses_month-value');
+console.log(expensesMonthValue);
+const additionalIncomeValue = document.getElementsByClassName('additional_income-value');
+console.log(additionalIncomeValue);
+const additionalExpensesValue = document.getElementsByClassName('additional_expenses-value');
+console.log(additionalExpensesValue);
+const incomePeriodValue = document.getElementsByClassName('income_period-value');
+console.log(incomePeriodValue);
+const targetMonthValue = document.getElementsByClassName('target_month-value');
+console.log(targetMonthValue);
 
 let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
@@ -165,6 +176,6 @@ console.log(appData.addExpenses);
 console.log(typeof appData.addExpenses);
 
 //-------------------------------
-/* for (let key in appData) {
+for (let key in appData) {
     console.log("Наша программа включает в себя данные: " + key + " Значение: " + appData[key]);
-} */
+}
