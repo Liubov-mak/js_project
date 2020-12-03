@@ -209,7 +209,7 @@ let appData = {
 
 let periodAmount = document.querySelector('.period-amount');
 periodSelect.addEventListener('input', function() {
-    periodAmount = this.value;
+    periodAmount.innerHTML = this.value;
     console.log(periodAmount);    
 });
 
