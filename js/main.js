@@ -1,5 +1,31 @@
 'use strict';
 
+const controlStart = document.getElementById('start'), // кнопка старта
+    btnIncomeAdd = document.querySelector('.income_add'),
+    controlCancel = document.getElementById('cancel'), // кнопка отмены
+    btnExpensesAdd = document.querySelector('.expenses_add'),
+    depositСheck = document.querySelector('.deposit-check'),
+    depositCheckmark = document.querySelector('.deposit-checkmark'),
+    depositAmount = document.querySelector('.deposit-amount'),
+    depositPercent = document.querySelector('.deposit-percent'),
+    prevAdditionalIncomeItem = document.querySelectorAll('.additional_income> .additional_income-item')[0],
+    nextAdditionalIncomeItem = document.querySelectorAll('.additional_income> .additional_income-item')[1],
+    incomeTitle = document.querySelector('.income-items> .income-title'), //Дополнительный доход
+    incomeAmount = document.querySelector('.income-amount'), //Дополнительный доход - сумма
+    salaryAmount = document.querySelector('.salary-amount'), //Месячный доход
+    expensesTitle = document.querySelectorAll('.expenses-items> .expenses-title')[0], //Обязательные расходы 
+    expensesAmount = document.querySelector('.expenses-amount'), //Обязательные расходы - сумма
+    additionalExpensesItem = document.querySelector('.additional_expenses-item'), // Возможные расходы
+    targetAmount = document.querySelector('.target-amount'), //Сумма депозита
+    periodSelect = document.querySelector('.period-select'), //выбор периода
+    budgetMonthValue = document.querySelector('.budget_month-value'),
+    budgetDayValue = document.getElementsByClassName('budget_day-value')[0],
+    expensesMonthValue = document.getElementsByClassName('expenses_month-value')[0],
+    additionalIncomeValue = document.getElementsByClassName('additional_income-value')[0],
+    additionalExpensesValue = document.getElementsByClassName('additional_expenses-value')[0],
+    incomePeriodValue = document.getElementsByClassName('income_period-value')[0],
+    targetMonthValue = document.getElementsByClassName('target_month-value')[0];
+
 let isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
@@ -50,21 +76,23 @@ let appData = {
 
 
         let addExpenses = prompt('Перечислите возможные расходы через запятую?');
-            while (isNumber(addExpenses) || addExpenses === '' || addExpenses === null || addExpenses.trim() === '') {
+            while (isNumber(addExpenses) || addExpenses.trim() === '' || addExpenses === null) {
                 addExpenses = prompt('Перечислите возможные расходы через запятую?');
-            }            
-            appData.addExpenses = addExpenses.firstLetterCaps();          
+            }                  
+            appData.addExpenses = new Array(addExpenses).join(', ').firstLetterCaps();         
+
+
             appData.deposit = confirm('Есть ли у вас депозит в банке?');
             for (let i = 0; i < 2; i++) {
                 let itemExpenses = prompt('Введите обязательную статью расходов?');
-                while (isNumber(itemExpenses) || itemExpenses === '' || itemExpenses === null || itemExpenses.trim() === '') {
+                while (isNumber(itemExpenses) || itemExpenses.trim() === '' || itemExpenses === null) {
                     itemExpenses = prompt('Введите обязательную статью расходов?');
                 }
                 let cashExpenses;
                 do {
                     cashExpenses = prompt('Во сколько это обойдется?');
                 } 
-                while (isNaN(cashExpenses) || cashExpenses === '' || cashExpenses === null || cashExpenses.trim() === '');
+                while (isNaN(cashExpenses) || cashExpenses.trim() === '' || cashExpenses === null);
 
                 appData.expenses[itemExpenses] = cashExpenses;
             }           
@@ -95,11 +123,11 @@ let appData = {
     getInfoDeposit: function() {
         if (appData.deposit) {
             appData.percentDeposit = prompt('Какой годовой процент?', '10');
-            while (isNumber(appData.percentDeposit) || appData.percentDeposit === '' || appData.percentDeposit === null || appData.percentDeposit.trim() === '') {
+            while (isNumber(appData.percentDeposit) || appData.percentDeposit.trim() === '' || appData.percentDeposit === null) {
                 appData.percentDeposit = prompt('Какой годовой процент?', '10');
             }
             appData.moneyDeposit = prompt('Какая сумма заложена?', 1000);   
-            while (isNaN(appData.moneyDeposit) || appData.moneyDeposit === '' || appData.moneyDeposit === null || appData.moneyDeposit.trim() === '') {
+            while (isNaN(appData.moneyDeposit) || appData.moneyDeposit.trim() === '' || appData.moneyDeposit === null) {
                 appData.moneyDeposit = prompt('Какая сумма заложена?', 1000);
             }
         }
@@ -129,6 +157,6 @@ console.log(appData.addExpenses);
 console.log(typeof appData.addExpenses);
 
 //-------------------------------
-/* for (let key in appData) {
+for (let key in appData) {
     console.log("Наша программа включает в себя данные: " + key + " Значение: " + appData[key]);
-} */
+}
