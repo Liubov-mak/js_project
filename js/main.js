@@ -65,14 +65,14 @@ let appData = {
         appData.showResult();  
         appData.blocked();      
     },
-/*     cancel: function() {      
+    cancel: function() {      
         appData.resetResult();            
     },
     resetResult: function() {
         cancel.addEventListener('click', function() {
-            appData.showResult().reset();            
+            appData.start().reset();            
         });
-    }, */
+    },
     getAddIncome: function() {
         additionalIncomeItem.forEach(function(item) {
             let itemValue = item.value.trim(', ');
