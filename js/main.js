@@ -63,9 +63,7 @@ class AppData {
 
         this.budget = +salaryAmount.value;
 
-        this.getExpInc();
-        /* this.getExpenses();
-        this.getIncome();  */
+        this.getExpInc();       
         this.getExpensesMonth();
         this.getAddExpenses();
         this.getAddIncome();
@@ -244,12 +242,8 @@ class AppData {
         });
         start.style.display = 'none';
         cancel.style.display = 'block';
-    }
-    /* periodSelect.addEventListener('change', function() {
-        periodAmount.innerHTML = periodSelect.value;
-    }); */
+    }    
     eventListeners() {
-
         start.addEventListener('click', this.start.bind(this));
         cancel.addEventListener('click', this.reset.bind(this));
         expensesAdd.addEventListener('click', this.addExpensesBlock);
