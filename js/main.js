@@ -96,12 +96,12 @@ AppData.prototype.addExpensesBlock = function() {
     }
 };
 AppData.prototype.getExpenses = function() {
-    const _this = this;
-    expensesItems.forEach(function(item) {
+    
+    expensesItems.forEach((item) => {
         let itemExpenses = item.querySelector('.expenses-title').value;
         let cashExpenses = item.querySelector('.expenses-amount').value;
         if(itemExpenses !== '' && cashExpenses !== '') {
-            _this.expenses[itemExpenses] = cashExpenses;
+            this.expenses[itemExpenses] = cashExpenses; // чтобы использовать this без переменной _this нужно использовать стрелочную функцию!!!!!!
         }
     }); 
 };
