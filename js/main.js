@@ -23,8 +23,6 @@ const start = document.getElementById('start'), // кнопка старта
 let isNumber;
 
 //-------------------------------
-/* class AppData {
-    constructor() { */
 class AppData {
     constructor() {
 
@@ -149,7 +147,6 @@ class AppData {
         });
     }
     getAddIncome() {
-
         additionalIncomeItem.forEach((item) => {
             const itemValue = item.value.trim();
             if (itemValue !== '') {
@@ -265,26 +262,6 @@ class AppData {
     }
 }
 
-
-
-
 const appData = new AppData();
 appData.eventListeners(); 
-/* AppData.prototype.eventListeners(); */
 console.log(appData);
-
-
-/* start.addEventListener('click', appData.start.bind(appData));
-cancel.addEventListener('click', appData.reset.bind(appData));
-expensesAdd.addEventListener('click', appData.addExpensesBlock);
-incomeAdd.addEventListener('click', appData.addIncomeBlock);
-salaryAmount.addEventListener('keyup', appData.check); */
-
-
-/* let addExp = [];
-for(let i = 0; i < appData.addExpenses.length; i++) {
-    let element = appData.addExpenses[i].trim();
-    element = element.charAt(0).toUpperCase() + element.substring(1).toLowerCase();
-    addExp.push(element);
-}  */
-
