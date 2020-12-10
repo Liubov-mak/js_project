@@ -251,14 +251,14 @@ class AppData {
             depositPercent.value = valueSelect;
         }       
     } 
-    checkDepositPersent() {
-        if(depositPercent.value >= 100 && depositPercent.value < 0) {
-            alert('Введите корректное значение в поле проценты');
-        }
+    checkDepositPersent() {      
         this.percentDeposit.value = alert('Введите корректное значение в поле проценты');
             while (isNumber(this.percentDeposit) || this.percentDeposit.trim() === '' || this.percentDeposit === null) {
                 this.percentDeposit.value = alert('Введите корректное значение в поле проценты');
             }  
+        if(this.depositPercent.value >= 100 && this.depositPercent.value < 0) {
+            alert('Введите корректное значение в поле проценты');
+        }
     }
     depositHandler() {
         if(checkBox.checked) { // если чекбокс-галка установлен, будем выводить Установлен
@@ -292,4 +292,34 @@ class AppData {
 
 const appData = new AppData();
 appData.eventListeners(); 
-console.log(appData);
+/* console.log(appData); */
+
+const myLesson = [
+    {lesson: 1, type: 'basic', points: 2},
+    {lesson: 2, type: 'additional', points: 4},
+    {lesson: 3, type: 'basic', points: 6},
+    {lesson: 4, type: 'additional', points: 3},
+    {lesson: 5, type: 'basic', points: 4},
+    {lesson: 6, type: 'basic', points: 2},
+    {lesson: 7, type: 'additional', points: 2},
+    {lesson: 8, type: 'basic', points: 6},
+    {lesson: 9, type: 'basic', points: 4},
+    {lesson: 10, type: 'basic', points: 6},
+    {lesson: 11, type: 'additional', points: 5}, 
+    {lesson: 12, type: 'basic', points: 2}, 
+    {lesson: 13, type: 'additional', points: 2}, 
+    {lesson: 14, type: 'basic', points: 4},
+    {lesson: 15, type: 'additional', points: 1},
+    {lesson: 16, type: 'additional', points: 7},
+    ];
+    
+    function newMyLesson(...arr) {
+        console.log(arr);
+    }
+
+    newMyLesson(...myLesson);      
+
+    /*  newMyLesson(...myLesson).querySelectorAll("type: 'additional'").forEach(() => {
+        console.log(newMyLesson);
+    }); */
+
