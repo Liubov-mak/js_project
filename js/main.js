@@ -311,15 +311,14 @@ const myLesson = [
     {lesson: 14, type: 'basic', points: 4},
     {lesson: 15, type: 'additional', points: 1},
     {lesson: 16, type: 'additional', points: 7},
-    ];
-    
-    function newMyLesson(...arr) {
-        console.log(arr);
-    }
+    ];  
 
-    newMyLesson(...myLesson);      
+    let newMyLesson = myLesson.filter ((item) => {
+        if (item.type === 'basic') {  
+            item.points = item.points / 2;        
+            return this;
+        } 
+    });    
 
-    /*  newMyLesson(...myLesson).querySelectorAll("type: 'additional'").forEach(() => {
-        console.log(newMyLesson);
-    }); */
+    console.log(newMyLesson);   
 
